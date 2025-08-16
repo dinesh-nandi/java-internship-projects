@@ -29,6 +29,19 @@ public class Task_1 {
             }
             switch(choice){
                 case 1:
+                    if (operandsEntered) {
+                        System.out.println("Operands already entered.");
+                        System.out.println("Do you want to overwrite ?? (y/n)");
+                        String ans;
+                        while (true) {
+                            ans = sc.next();
+                            if (ans.equalsIgnoreCase("y")) {
+                                break;
+                            }
+                            System.out.println("Invalid choice! Please enter y or n :");
+                        }
+                    }
+
                     System.out.println("Enter the first number");
                     while(!sc.hasNextDouble()){
                         System.out.println("Enter a valid number");
