@@ -69,8 +69,12 @@ public class Task_1 {
                         System.out.println("Please enter the operands first");
                         break;
                     }
-                    result = num1 / num2 ;
-                    System.out.println("The result is :" + result);
+                    if(num2 == 0){
+                        System.out.println("Error !!. Cannot divide by zero.");
+                    }else{
+                        result  = num1 / num2;
+                        System.out.println("The result is : " + result);
+                    }
                     break;
 
                 case 6:
