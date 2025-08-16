@@ -3,7 +3,7 @@ public class Task_1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        double num1 = 0 , num2 = 0;
+        double num1 = 0, num2 = 0;
         boolean operandsEntered = false;
         double result;
         System.out.println("*** THE CALCULATOR ***");
@@ -30,8 +30,16 @@ public class Task_1 {
             switch(choice){
                 case 1:
                     System.out.println("Enter the first number");
+                    while(!sc.hasNextDouble()){
+                        System.out.println("Enter a valid number");
+                        sc.next();
+                    }
                     num1 = sc.nextDouble();
                     System.out.println("Enter the second number");
+                    while(!sc.hasNextDouble()){
+                        System.out.println("Enter a valid number");
+                        sc.next();
+                    }
                     num2 = sc.nextDouble();
 
                     operandsEntered = true;
