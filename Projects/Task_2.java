@@ -9,7 +9,52 @@ public class Task_2 {
     static int[] ages = new int[100];
     static String[] accountType = new String[100];
     static String[] password = new String[100];
+    static double[] balance = new double[100];
     static int accnt_count = 0;
+
+    //checking the balance
+    public static void check_balance(){
+        int index = login();
+        if(index==-1){
+            return;
+        }
+        System.out.println("Your current balance is : " + balance[index]);
+    }
+
+    //withdraw money
+    public static void withdraw(Scanner sc){
+        int index = login();
+        if(index == -1){
+            return;
+        }
+        System.out.println("Enter the amount");
+        double withdraw_amt = sc.nextDouble();
+
+        if(withdraw_amt <= balance[index]){
+            balance[index] -= withdraw_amt;
+            System.out.println("Successful debited.");
+            System.out.println("Your new Balance is " +balance[index]);
+        }else{
+            System.out.println("Your balance is low");
+        }
+    }
+
+    //depositing money
+    public static void deposit(Scanner sc){
+        int index =  login();
+        if(index == -1){
+            return;
+        }
+        System.out.println("Enter the amount to deposit : ");
+        double amt = sc.nextDouble();
+
+        if(amt >= 1500){
+            balance[index] +=amt;
+            System.out.println("Your money has been credited to your account, the new balance is : " + balance[index]);
+        }else{
+            System.out.println("The minimum deposit is Rs.1500");
+        }
+    }
 
     //creating an account
     public static void account(Scanner sc){
@@ -96,8 +141,26 @@ public class Task_2 {
         ages[accnt_count] = age;
         accountType[accnt_count] = account_type;
         password[accnt_count] = pass;
+        balance[accnt_count] = initialDeposit;
 
         accnt_count++;
+    }
+
+    //login to the account
+    public static int login(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter your Account Number");
+        int  accNum = sc.nextInt();
+        System.out.println("Enter your password");
+        String pass_key = sc.next();
+
+        for(int i = 0; i<accnt_count; i++){
+            if(account_num[i] == accNum && password[i].equals(pass_key)){
+                return i;
+            }
+        }
+        System.out.println("Invalid account number or password");
+        return -1;
     }
 
     public static void main(String[] args) {
