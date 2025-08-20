@@ -190,7 +190,25 @@ public class Task_2 {
             }
 
             switch (choice){
-
+                case 1:
+                    account(sc);
+                    break;
+                case 2:
+                    deposit(sc);
+                    break;
+                case 3:
+                    withdraw(sc);
+                    break;
+                case 4:
+                    check_balance();
+                    break;
+                case 5:
+                    System.out.println("Thank You for Visiting.");
+                    sc.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid input!!");
+                    System.out.println("Enter a valid option");
             }
         }
     }
