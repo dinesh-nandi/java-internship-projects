@@ -14,7 +14,21 @@ public class Task_2 {
             System.out.println("Enter 5 to Exit");
 
             System.out.println("Enter your option ----> ");
-            
+            int choice;
+
+            if(sc.hasNextInt()){
+                choice = sc.nextInt();
+                sc.nextLine();  //clear's the buffer memory
+            }else{
+                System.out.println("Invalid input !!!");
+                System.out.println("Please re-enter the valid option");
+                sc.nextLine();  //clear's the buffer memory
+                continue;
+            }
+
+            switch (choice){
+               
+            }
         }
     }
 }
