@@ -15,6 +15,16 @@ public class Task_3 {
             System.out.println("Enter 4 to View the Student Details");
             System.out.println("Enter 5 to Exit");
 
+            System.out.println("Enter your choice ......");
+            int choice;
+            if(sc.hasNextInt()){
+                choice = sc.nextInt();
+                break;
+            }else{
+                System.out.println("Invalid input!!");
+                System.out.println("Please re-enter from the above option");
+                sc.nextLine(); //clear's the buffer memory
+            }
 
         }
 
